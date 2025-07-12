@@ -1,14 +1,12 @@
 // This JavaScript code will print "C is fun" n times, where n is the user input
 
-const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+let args = process.argv.slice(2);
 
-readline.question("Enter the number of times to print 'C is fun': ", (input) => {
-    const n = parseInt(input, 10);
-    for (let i = 1; i <= n; i++) {
-        console.log("C is fun");
-    }
-    readline.close();
-});
+if (args.length === 0 ||  isNaN(parseInt(args[0]))) {
+  console.log("Missing number of occurrences");
+} else {
+  let n = parseInt(args[0]);
+  for (let i = 0; i < n; i++) {
+    console.log("C is fun");
+  }
+} 
